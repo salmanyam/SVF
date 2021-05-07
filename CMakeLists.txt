@@ -28,7 +28,7 @@ if(NOT COMMAND add_llvm_library)
         endif()
 
         find_package(LLVM REQUIRED CONFIG)
-        
+
         list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
         include(AddLLVM)
 
@@ -56,7 +56,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include
                     ${Z3_DIR}/include/)
 
 # checks if the test-suite is present, if it is then build bc files and add testing to cmake build
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite")
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite" AND NOT DEFINED IN_SOURCE_BUILD)
     add_custom_target(
         generatebc ALL
         COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite/generate_bc.sh
