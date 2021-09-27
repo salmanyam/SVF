@@ -63,6 +63,7 @@ public:
 
     /// Report file/close bugs
     void reportBug(ProgSlice* slice);
+
 };
 
 } // End namespace SVF

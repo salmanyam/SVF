@@ -88,6 +88,14 @@ public:
         return SaberCheckerAPI::getCheckerAPI()->isMemDealloc(fun);
     }
     //@}
+    
+    llvm::DenseSet<const SVFGNode *> getBadNodes() {
+        return BadNodes;
+    }
+    
+    void insertBadNode(const SVFGNode* src) {
+    	BadNodes.insert(src);
+    }
 
 protected:
     /// Report leaks
@@ -117,6 +125,9 @@ protected:
     //@}
 private:
     SVFGNodeToCSIDMap srcToCSIDMap;
+    
+    /// DPP related, storing nodes related to double free
+    llvm::DenseSet<const SVFGNode*> BadNodes;
 };
 
 } // End namespace SVF
