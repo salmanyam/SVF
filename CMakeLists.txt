@@ -68,7 +68,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include
                     ${Z3_INSTALLS})
 
 # checks if the test-suite is present, if it is then build bc files and add testing to cmake build
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite")
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite" AND NOT DEFINED IN_SOURCE_BUILD)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite)
     enable_testing()
     add_subdirectory(Test-Suite)
