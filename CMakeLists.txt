@@ -70,7 +70,7 @@ endif()
 
 LINK_DIRECTORIES(${Z3_DIR}/bin)
 add_subdirectory(lib)
-add_subdirectory(tools)
+#add_subdirectory(tools)
 
 INSTALL(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ ${CMAKE_CURRENT_BINARY_DIR}/include/ ${Z3_DIR}/include/

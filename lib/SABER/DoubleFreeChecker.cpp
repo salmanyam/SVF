@@ -43,6 +43,9 @@ void DoubleFreeChecker::reportBug(ProgSlice* slice)
                         << getSourceLoc(cs->getCallSite()) << ")\n";
         SVFUtil::errs() << "\t\t double free path: \n" << slice->evalFinalCond() << "\n";
         slice->annotatePaths();
+
+	//DPP related
+	insertBadNode(src);
     }
 }
 
