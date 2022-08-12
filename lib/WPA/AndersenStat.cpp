@@ -211,7 +211,7 @@ void AndersenStat::constraintGraphStat()
     timeStatMap["AvgIn/OutAddrEdge"] = addravgIn;
     timeStatMap["AvgIn/OutEdge"] = avgIn;
 
-    PTAStat::printStat("Constraint Graph Stats");
+    //PTAStat::printStat("Constraint Graph Stats");
 }
 /*!
  * Stat null pointers
@@ -359,6 +359,6 @@ void AndersenStat::performStat()
     PTNumStatMap["PointsToConstPtr"] = _NumOfConstantPtr;
     PTNumStatMap["PointsToBlkPtr"] = _NumOfBlackholePtr;
 
-    PTAStat::printStat("Andersen Pointer Analysis Stats");
+    //PTAStat::printStat("Andersen Pointer Analysis Stats");
 }
 
